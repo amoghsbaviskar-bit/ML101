@@ -9,7 +9,7 @@
 
 ## Output
 
-* `losses.png` → shows how loss decreases over time
+* `loss.png` → shows how loss decreases over time
 * `output.txt` → contains epoch-wise logs
 
 ## Learning
