@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day 2 - Quadratic Regression</title>
+
+  <style>
+    :root {
+      --bg: #0f0f14;
+      --surface: #1c1c24;
+      --primary: #a8c7ff;
+      --text: #e6e1e9;
+      --muted: #b3b3bf;
+      --radius: 16px;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 40px;
+    }
+
+    .card {
+      max-width: 700px;
+      margin: auto;
+      background: var(--surface);
+      padding: 24px;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      color: var(--primary);
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Day 2 - Quadratic Regression 📊</h1>
+
+    <p class="muted">
+      Extended linear regression into a quadratic model using PyTorch and studied training stability.
+    </p>
+
+    <h3>What I did</h3>
+    <ul>
+      <li>Built model: y = w1x² + w2x + b</li>
+      <li>Trained using gradient descent</li>
+      <li>Tuned learning rate to avoid NaN explosions</li>
+      <li>Observed divergence vs convergence behavior</li>
+    </ul>
+
+    <h3>Output</h3>
+    <p class="muted">Loss curve visualization:</p>
+    <img src="loss.png" alt="Loss curve">
+
+    <br><br>
+    <a href="../">← Back to Home</a>
+  </div>
+
+</body>
+</html>
