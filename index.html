@@ -1,21 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>ML101 Journey</title>
+  <meta charset="UTF-8">
+  <title>ML Journey</title>
+
+  <style>
+    :root {
+      --bg: #0f0f14;
+      --surface: #1c1c24;
+      --surface-2: #2a2a35;
+      --primary: #a8c7ff;
+      --text: #e6e1e9;
+      --muted: #b3b3bf;
+      --radius: 16px;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 50px;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    p {
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .card {
+      width: 260px;
+      background: var(--surface);
+      padding: 16px;
+      border-radius: var(--radius);
+      transition: 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .card:hover {
+      background: var(--surface-2);
+      transform: translateY(-3px);
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: -10px;
+    }
+  </style>
 </head>
+
 <body>
-    <h1>ML101 - My 60 Day ML Journey</h1>
 
-    <p>Learning PyTorch, Deep Learning, and building a Small Language Model (SLM).</p>
+  <h1>ML Journey 🚀</h1>
+  <div class="tagline">From Linear Regression to Neural Networks</div>
 
-    <h2>Progress</h2>
-    <ul>
-        <li>Day 1: Tensors </li>
-        <li>Day 2: Autograd </li>
-        <li>Day 3: Linear Regression </li>
-    </ul>
+  <p>A step-by-step machine learning learning log</p>
 
-    <h2>GitHub Repo</h2>
-    <a href="https://github.com/amoghsbaviskar-bit/ML101">View Code</a>
+  <div class="container">
+
+    <div class="card">
+      <a href="day01/">Day 1 - Linear Regression</a>
+    </div>
+
+    <div class="card">
+      <a href="day02/">Day 2 - Quadratic Regression</a>
+    </div>
+
+  </div>
+
 </body>
 </html>
