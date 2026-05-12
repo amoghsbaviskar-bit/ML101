@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day 3 - Framework Refactoring</title>
+
+  <style>
+    :root {
+      --bg: #0f0f14;
+      --surface: #1c1c24;
+      --primary: #a8c7ff;
+      --text: #e6e1e9;
+      --muted: #b3b3bf;
+      --radius: 16px;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 40px;
+    }
+
+    .card {
+      max-width: 700px;
+      margin: auto;
+      background: var(--surface);
+      padding: 24px;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      color: var(--primary);
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Day 3 - Framework Abstraction 🏗️</h1>
+
+    <p class="muted">
+      Refactored manual logic into a modular PyTorch architecture using classes and automated optimizers.
+    </p>
+
+    <h3>What I did</h3>
+    <ul>
+      <li>Implemented <code>nn.Module</code> to encapsulate model parameters</li>
+      <li>Migrated from manual math to <code>nn.MSELoss</code> and <code>optim.Adam</code></li>
+      <li>Used <code>nn.Parameter</code> for automated gradient tracking</li>
+      <li>Integrated a "Three-Step Ritual" loop (Zero Grad, Backward, Step)</li>
+      <li>Implemented Modulo-based logging to clean up terminal output</li>
+    </ul>
+
+    <h3>Output</h3>
+    <p class="muted">Refactored Loss Curve (Observe Adam's momentum/oscillations):</p>
+    <img src="loss.png" alt="Loss curve">
+
+    <br><br>
+    <a href="../">← Back to Home</a>
+  </div>
+
+</body>
+</html>
