@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day 4 - My First Neural Network</title>
+
+  <style>
+    :root {
+      --bg: #0f0f14;
+      --surface: #1c1c24;
+      --primary: #a8c7ff;
+      --text: #e6e1e9;
+      --muted: #b3b3bf;
+      --radius: 16px;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 40px;
+    }
+
+    .card {
+      max-width: 700px;
+      margin: auto;
+      background: var(--surface);
+      padding: 24px;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      color: var(--primary);
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+    .github-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border: 1px solid #30363d;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .github-link:hover {
+      background: #30363d;
+      color: var(--primary);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Day 4 - My First Neural Network 🧠</h1>
+
+    <p class="muted">
+      Evolution from manual formulas to a fully-formed architecture. The model now defines its own logic through hidden layers and non-linear activations.
+    </p>
+
+    <h3>What I did</h3>
+    <ul>
+      <li>Migrated from hard-coded quadratic formulas to <code>nn.Linear</code> layers.</li>
+      <li>Implemented a <strong>Hidden Layer</strong> with 10 neurons to increase model capacity.</li>
+      <li>Integrated <code>nn.ReLU</code> activation to introduce non-linearity (The "Bends").</li>
+      <li>Transitioned to <strong>2D Tensors</strong> (Matrices) to follow industry-standard <code>[Batch, Feature]</code> shapes.</li>
+      <li>Stabilized training with <code>lr = 0.01</code> over 1000 epochs to prevent <code>NaN</code>.</li>
+    </ul>
+
+    <h3>Observations</h3>
+    <p class="muted">
+      Unlike Day 3's bumpy descent, this model showed high stability. By giving the system more "room to think" (10 neurons vs 1 formula), the loss hit near-perfection ($2.9 \times 10^{-13}$) with a smooth, singular correction bump.
+    </p>
+
+    <h3>Output</h3>
+    <p class="muted">Neural Training Loss (Convergence at 400 epochs):</p>
+    <img src="loss.png" alt="Loss curve">
+
+    <br><br>
+    <a href="https://github.com/amoghsbaviskar-bit/ML101/tree/main/day04" class="github-link">
+        📂 View Source on GitHub
+    </a>
+    <br><br>
+    <a href="../">← Back to Home</a>
+  </div>
+
+</body>
+</html>
