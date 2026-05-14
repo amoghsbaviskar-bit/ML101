@@ -4,7 +4,7 @@ import torch.optim as optim
 import sys
 from pathlib import Path
 
-# This finds the "ML101" folder automatically
+
 root = Path(__file__).resolve().parent.parent.parent
 sys.path.append(str(root))
 from utils.plotting import save_loss_plot 
