@@ -7,7 +7,7 @@ from pathlib import Path
 
 root = Path(__file__).resolve().parent.parent.parent
 sys.path.append(str(root))
-from utils.plotting import save_loss_plot 
+from utils.plotting import save_loss_plot , plot_decision_boundary
 
 x = th.tensor([[2.0],[4.0]])
 y = th.tensor([[1.0],[3.0]])
@@ -48,4 +48,5 @@ for epoch in range (1000):
     if epoch % 100 == 0:
         print(f"Epoch:{epoch} , Loss:{loss.item()}")
     
-save_loss_plot(losses)
+#save_loss_plot(losses)
+plot_decision_boundary(model,x,y)
