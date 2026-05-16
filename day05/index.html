@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day 5 - My First Classifier</title>
+
+  <style>
+    :root {
+      --bg: #0f0f14;
+      --surface: #1c1c24;
+      --primary: #a8c7ff;
+      --text: #e6e1e9;
+      --muted: #b3b3bf;
+      --radius: 16px;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 40px;
+    }
+
+    .card {
+      max-width: 700px;
+      margin: auto;
+      background: var(--surface);
+      padding: 24px;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      color: var(--primary);
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 15px;
+      border: 1px solid #2d2d3d;
+    }
+    
+    .image-group {
+      margin-bottom: 25px;
+    }
+
+    .github-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border: 1px solid #30363d;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .github-link:hover {
+      background: #30363d;
+      color: var(--primary);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Day 5 - My First Classifier 🚀</h1>
+
+    <p class="muted">
+      The leap from regression to classification. Moving past estimating "how much" to drawing clear probabilistic boundaries to decide between two distinct outcomes.
+    </p>
+
+    <h3>What I Did</h3>
+    <ul>
+      <li><strong>Modularized Workspace:</strong> Built a <code>utils/</code> directory and packaged code into <code>plotting.py</code> to reuse visualization pipelines cleanly.</li>
+      <li><strong>Streamlined Architecture:</strong> Used <code>nn.Sequential()</code> to neatly cluster the layers into a single processing pipeline.</li>
+      <li><strong>Probabilistic Mapping:</strong> Implemented an <code>nn.Sigmoid()</code> layer to squeeze raw numbers into explicit $0.0$ to $1.0$ probabilities.</li>
+      <li><strong>Upgraded Objective Function:</strong> Switched from MSE to Binary Cross-Entropy Loss (<code>nn.BCELoss</code>) to aggressively punish confident, incorrect classification mistakes.</li>
+      <li><strong>The Knife's Edge Test:</strong> Tested the boundary with a completely unobserved value (<code>5.0</code> hours) right in the dead-zone of our training data, netting a confident <strong>PASS</strong> prediction.</li>
+    </ul>
+
+    <h3>Observations</h3>
+    <p class="muted">
+      The loss curve showed an incredibly violent cliff drop at the start driven by the aggressive logarithmic penalties of <strong>BCELoss</strong>, turning into a smooth, gradual crawl down to an error of 0.0049. This leveling out is caused by the flat geometries of the <strong>Sigmoid</strong> curve as the network approaches perfection. Because 5.0 hours sat directly between our raw sets, the model drew its decision fence right through it, leaning passing based purely on initial random weight parameters.
+    </p>
+
+    <h3>Output</h3>
+    
+    <div class="image-group">
+      <p class="muted">📊 Optimization Track (BCELoss Descent):</p>
+      <img src="loss.png" alt="Training Loss Curve">
+    </div>
+
+    <div class="image-group">
+      <p class="muted">🔮 The Internal Map ( Sigmoid Decision Boundary ):</p>
+      <img src="decision_boundary.png" alt="Decision Boundary Plot">
+    </div>
+
+    <br>
+    <a href="https://github.com/amoghsbaviskar-bit/ML101/tree/main/day05" class="github-link">
+        📂 View Source on GitHub
+    </a>
+    <br><br>
+    <a href="../">← Back to Home</a>
+  </div>
+
+</body>
+</html>
