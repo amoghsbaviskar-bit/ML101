@@ -1,0 +1,15 @@
+Epoch:   0 , Loss:0.690899
+Epoch: 100 , Loss:0.068858
+Epoch: 200 , Loss:0.024930
+Epoch: 300 , Loss:0.012502
+Epoch: 400 , Loss:0.007367
+Epoch: 500 , Loss:0.004810
+Epoch: 600 , Loss:0.003280
+Epoch: 700 , Loss:0.002372
+Epoch: 800 , Loss:0.001776
+Epoch: 900 , Loss:0.001367
+Epoch:1000 , Loss:0.001080
+Plot saved as loss.png
+Decision plot saved as decision_boundary.png
+now the model will decide if the value 5.0 is pass or fail: 
+PASS

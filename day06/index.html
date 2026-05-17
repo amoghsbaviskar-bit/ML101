@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day 6 - Dataset and DataLoader Introduction</title>
+
+  <style>
+    :root {
+      --bg: #0f0f14;
+      --surface: #1c1c24;
+      --primary: #a8c7ff;
+      --text: #e6e1e9;
+      --muted: #b3b3bf;
+      --radius: 16px;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 40px;
+    }
+
+    .card {
+      max-width: 700px;
+      margin: auto;
+      background: var(--surface);
+      padding: 24px;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      color: var(--primary);
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 15px;
+      border: 1px solid #2d2d3d;
+    }
+    
+    .image-group {
+      margin-bottom: 25px;
+    }
+
+    .github-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border: 1px solid #30363d;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .github-link:hover {
+      background: #30363d;
+      color: var(--primary);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Day 6 - Dataset and DataLoader Introduction 📦</h1>
+
+    <p class="muted">
+      Moving from raw memory loading to industrial, scalable data engineering. Introducing data slicing pipelines to handle training workloads efficiently without choking local system memory.
+    </p>
+
+    <h3>What I Did</h3>
+    <ul>
+      <li><strong>Structured Data Storage:</strong> Wrapped loose global <code>x</code> and <code>y</code> tensors securely inside a custom, structured PyTorch <code>Dataset</code> class.</li>
+      <li><strong>Mini-Batch Delivery:</strong> Implemented a <code>DataLoader</code> to feed data into the model in distinct chunks of 4 samples rather than dumping the whole dataset at once.</li>
+      <li><strong>Dynamic Shuffling:</strong> Flipped on <code>shuffle=True</code> to automatically randomize sample grouping and sequencing at the start of every single epoch.</li>
+      <li><strong>Nested Loop Architecture:</strong> Refactored the engine room to track outer loops for overall Epochs and a nested inner loop to step sequentially through the mini-batches.</li>
+      <li><strong>The Boundary Check:</strong> Re-tested the final classification boundary on the unseen value of <code>5.0</code>, resulting in an incredibly confident <strong>PASS</strong> prediction.</li>
+    </ul>
+
+    <h3>Observations</h3>
+    <p class="muted">
+      The optimization curve showed an incredibly aggressive, steeper drop at the start compared to Day 5, followed by a slight geometric slowdown right around the 0.2 error mark. Because the model updates its weights multiple times per epoch (once for each mini-batch), it converges and stabilizes much faster. The final classification boundary stayed clean, splitting the passing and failing zones right down the center.
+    </p>
+
+    <h3>Output</h3>
+    
+    <div class="image-group">
+      <p class="muted">📊 Mini-Batch Optimization Track (Avg Loss: 0.001080):</p>
+      <img src="loss.png" alt="Training Loss Curve">
+    </div>
+
+    <div class="image-group">
+      <p class="muted">🔮 The Shuffled Map (Sigmoid Decision Boundary):</p>
+      <img src="decision_boundary.png" alt="Decision Boundary Plot">
+    </div>
+
+    <br>
+    <a href="https://github.com/amoghsbaviskar-bit/ML101/tree/main/day06" class="github-link">
+        📂 View Source on GitHub
+    </a>
+    <br><br>
+    <a href="../">← Back to Home</a>
+  </div>
+
+</body>
+</html>
