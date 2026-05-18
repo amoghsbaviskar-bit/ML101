@@ -1,0 +1,5 @@
+DAY-07:
+training samples successfully loaded:60000
+testing samples successfully loaded:10000
+Single batch img shape:torch.Size([64, 1, 28, 28])
+single batch labels shape:torch.Size([64])
